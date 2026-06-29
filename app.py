@@ -18,7 +18,7 @@ st.markdown("Sistem cerdas untuk monitoring risiko, proyeksi harga gabah, dan mi
 @st.cache_data
 def load_data():
     # Membaca CSV dengan melewati 3 baris pertama (metadata template)
-    df = pd.read_csv("data_panen.csv", header=3)
+    df = pd.read_csv("data_panen (1).csv", header=3)
     
     # Mengisi baris tahun yang kosong secara otomatis (forward fill)
     df['Tahun'] = df['Tahun'].ffill()
@@ -57,7 +57,7 @@ def load_data():
 try:
     df = load_data()
 except Exception as e:
-    st.error(f"Gagal memuat file 'data_panen.csv'. Pastikan file berada di direktori/folder yang sama dengan app.py. Error: {e}")
+    st.error(f"Gagal memuat file 'data_panen (1).csv'. Pastikan file berada di direktori/folder yang sama dengan app.py. Error: {e}")
     st.stop()
 
 # ==========================================
